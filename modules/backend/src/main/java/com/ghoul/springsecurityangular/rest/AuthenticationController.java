@@ -2,7 +2,7 @@ package com.ghoul.springsecurityangular.rest;
 
 import com.ghoul.springsecurityangular.dto.ResponseDTO;
 import com.ghoul.springsecurityangular.dto.UserDTO;
-import com.ghoul.springsecurityangular.session.InMemorySessionRegistration;
+import com.ghoul.springsecurityangular.session.SessionRegistration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,7 +18,7 @@ public class AuthenticationController {
   @Autowired
   public AuthenticationManager manager;
   @Autowired
-  public InMemorySessionRegistration sessionRegistry;
+  public SessionRegistration sessionRegistry;
 
   @PostMapping("/login")
   public ResponseEntity<ResponseDTO> login(@RequestBody UserDTO user) {
